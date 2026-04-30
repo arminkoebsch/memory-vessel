@@ -97,7 +97,7 @@ void draw() {
   
   strokeWeight(2);
   
-  for(float i = 0; i <=200; i = i += 2){
+  for(float i = 0; i <=200; i = i += 2){//gradients
 
     stroke(#000000, map(i, 0, 200, 200, 0));
     line(i+145, 0, i+145, 800);
@@ -106,14 +106,16 @@ void draw() {
   }
   
 
+  
+
   pushMatrix();
   translate(fx, 300);
   Fork();
   popMatrix();
-  if (fx <= 60 && dir == true) {
+  if (fx <= 62 && dir == true) {
     fx = fx += .5;
   } else if (t >= 0) {
-    t = t - 1;
+    t = t - .5;
   }
 
   if (t <=52) {
@@ -122,7 +124,7 @@ void draw() {
 
   if (dir == false) {
     fx = fx - 1;
-    r = r - 1;
+    r = r - .5;
   }
 
   noFill();
@@ -133,6 +135,8 @@ void draw() {
   arc(400, 260, 512, 200, radians(t), radians(r));
   
   
+  fill(#B7B7B7);
+  ellipse(400, 0, 510, 50);
 }
 
 
